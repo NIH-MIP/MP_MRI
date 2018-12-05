@@ -1,14 +1,16 @@
+#!/usr/bin/env python3
 import os
 import pandas as pd
 import shutil
 import argparse
+import pdb
+import re
 
 
 class CreateImageFolder:
     '''
     note - this class takes an input path and sorts the
     expects files with .jpeg output and label after final underscore
-
     '''
 
     def __init__(self,path_to_input='',path_to_output='',percent=0.2,neg_lab='neg',pos_lab='pos'):
@@ -31,6 +33,7 @@ class CreateImageFolder:
         #use function to below to make sure all files present in output directory
         self.make_out_dir(neg_lab=self.neg_label,pos_lab=self.pos_label)
 
+
         #get all file paths
         all_file_path=pd.Series([os.path.join(self.inpath,file) for file in os.listdir(self.inpath)])
 
@@ -43,9 +46,10 @@ class CreateImageFolder:
         for state in split.keys():
             state_item=split[state]
             for path in state_item:
-                if path.split('.')[0].split('_')[-1] == self.neg_label:
+                neg=re.compile(self.neg_label); pos=re.compile(self.pos_label)
+                if neg.search(os.path.basename(path)):
                     shutil.copy2(path,os.path.join(self.outpath,state,self.neg_label))
-                if path.split('.')[0].split('_')[-1] == self.pos_label:
+                if pos.search(os.path.basename(path)):
                     shutil.copy2(path, os.path.join(self.outpath, state, self.pos_label))
 
 
