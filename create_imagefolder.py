@@ -11,13 +11,13 @@ class CreateImageFolder:
 
     '''
 
-    def __init__(self,path_to_input='/home/tom/Dropbox/Github/new_path_arch/OneRes_architecture/oneres_raw_data/decon/200',
-                 path_to_output='/home/tom/Dropbox/Github/new_path_arch/OneRes_architecture/oneres_processed_data/decon/200',
+    def __init__(self,path_to_input='',
+                 path_to_output='',
                  percent=0.2):
         '''
         Args:
-            path_to_input: any path to the input
-            path_to_output: the path to the output
+            path_to_input: path to the folder containing images.  Expect them to have image extension (i.e. .jpg) and label after final underscore
+            path_to_output: the path where you want your image folder saved
             percent: percent of patients in validation (if you have 100 patients and this value is 0.2, you will have 20 validation patients)
         '''
 
@@ -79,8 +79,3 @@ if __name__=='__main__':
 
     c=CreateImageFolder(args.input_path,args.output_path,args.percent)
     c.create_image_folder()
-
-
-
-
-
