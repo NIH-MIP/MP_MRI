@@ -16,7 +16,8 @@ class CreateImageFolder:
                  percent=0.2):
         '''
         Args:
-            path_to_input: path to the folder containing images.  Expect them to have image extension (i.e. .jpg) and label after final underscore
+            path_to_input: path to the folder containing images.  Expect them to have image extension (i.e. .jpg) and label after final underscore (i.e. tumor1_neg.jpeg would be placed in file 'neg')
+            
             path_to_output: the path where you want your image folder saved
             percent: percent of patients in validation (if you have 100 patients and this value is 0.2, you will have 20 validation patients)
         '''
