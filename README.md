@@ -1,7 +1,7 @@
 # MP_MRI
 Miscellaneous tools for working with multiparametric MRI
 
-create_imagefolder.py
+# create_imagefolder.py
 command line program that puts all your files in Pytorch ImageFolder.  Expects .jpeg images with label after final underscore
 flags:
 --input_path (str)# full path to directory with images
