@@ -1,8 +1,8 @@
-# MP_MRI
-Miscellaneous tools for working with multiparametric MRI
+Miscellaneous tools 
 
 # create_imagefolder.py
 command line program that puts all your files in Pytorch ImageFolder.  Expects .jpeg images with label after final underscore
+
 flags:
 
 --input_path # full path to directory with images
@@ -19,8 +19,8 @@ python3 create_imagefolder.py --input_path '/path_to_folder_with_images' --outpu
 # torchvision_train.py
 command line program that allows you to train neural networks using transfer learning in pytorch.  Basically just takes the 
 examples from pytorch website and allows them to run with command line
-flags:
 
+flags:
 --image_dir        image directory in ImageFolder format (can use create_imagefolder script above to create
 
 --out_dir          filepath to where you want your model saved
