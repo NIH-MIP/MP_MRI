@@ -21,6 +21,7 @@ command line program that allows you to train neural networks using transfer lea
 examples from pytorch website and allows them to run with command line
 
 flags:
+
 --image_dir        image directory in ImageFolder format (can use create_imagefolder script above to create
 
 --out_dir          filepath to where you want your model saved
