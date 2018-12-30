@@ -1,3 +1,5 @@
+#author @t_sanf
+
 import os
 import pydicom
 from sklearn.preprocessing import MinMaxScaler
