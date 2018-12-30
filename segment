@@ -16,7 +16,7 @@ class Segment(ParseVOI):
     '''
 
     def __init__(self,filetype='PIRADS'):
-        self.datapath=r'/home/tom/Desktop/prostateX_processed'
+        self.datapath=r'/home/*user*/Desktop/prostateX_processed'
 
     def segment_allpatients(self):
         '''loop over all patients in root directory, perform segmentation on all of them
