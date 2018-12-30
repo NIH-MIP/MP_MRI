@@ -1,8 +1,11 @@
 miscellaneous tools for multiparametric MRI
 
 # Parsing_VOI.py
-simple and very specific parser to create boudning boxes from VOI files - expects very specific format
+simple and very specific parser to create boudning boxes from VOI files - expects MIPAV format
 
-# Align.py
-wraps Stephanie's seriesAlign3D compiled matlab code and aligns files
+# utils.py 
+a few helper function
+
+# segment.py
+file to segment bounding boxes around the tumor based on polygon segmentation .voi files for T2, ADC, and highB.  Expects flies to be aligned already.  saves as three chanel RGB in .jpg format.  
 
