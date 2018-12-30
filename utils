@@ -1,0 +1,26 @@
+import os
+import pydicom
+from sklearn.preprocessing import MinMaxScaler
+
+
+def rescale_array(array):
+    '''rescales the array from 0-250'''
+    scaler =MinMaxScaler(feature_range=(0 ,250))
+    scaler =scaler.fit(array)
+    X_scaled =scaler.transform(array)
+    return (X_scaled)
+
+
+def order_dicom(dicom_dir):
+    '''
+    sorts the list of filenames based on z position of dicom files
+    :param dicom_dir full path to directory with dicom files
+    :return list of files in correct order
+    '''
+
+    dicoms={}
+    for path in [os.path.join(dicom_dir,file) for file in os.listdir(dicom_dir) if file!='VERSION']:
+        ds=pydicom.read_file(path)
+        dicoms[path] = float(ds.SliceLocation)
+    updated_imagelist=[key for (key, value) in sorted(dicoms.items(), key=lambda x: x[1])]
+    return(updated_imagelist)
