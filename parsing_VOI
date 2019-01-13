@@ -1,7 +1,5 @@
 author @t_sanf
 
-
-
 import os
 import pandas as pd
 from collections import Counter
@@ -33,7 +31,6 @@ class ParseVOI(object):
     def list_of_dicts(self,filepath):
         '''generates a list of dicts, one for each .voi file in the directory
         :return: list of dictionaries 
-
         '''
         self.PATH=filepath
         file_path=filepath
