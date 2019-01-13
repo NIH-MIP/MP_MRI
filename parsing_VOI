@@ -20,10 +20,8 @@ class ParseVOI(object):
         self.PATH=''
 
     def list_of_dicts_all_images(self,filepaths):
-        '''takes a
-
+        '''generates a list of dicts for all patients in a root directory
         :param filepaths --> list of filepaths
-        :output
         '''
 
         for file in os.listdir(filepaths):
@@ -33,9 +31,8 @@ class ParseVOI(object):
 
 
     def list_of_dicts(self,filepath):
-        '''generates a list of dicts after iterating over stuff
-        note - this function calls BBox_from_position function
-        :return: list of dictionaries, one for each
+        '''generates a list of dicts, one for each .voi file in the directory
+        :return: list of dictionaries 
 
         '''
         self.PATH=filepath
@@ -79,11 +76,11 @@ class ParseVOI(object):
 
     def get_ROI_slice_loc(self,path=None):
         '''
-        selects each slice number and the location of starting coord and end coord
+        selects each slice number and the location of starting coord and end coord,
+        note - simple string matching based on '# slice number'
         :return: dict of {slice number:(tuple of start location, end location)}
 
         '''
-
         pd_df=pd.read_fwf(path)
 
         #get the name of the file
