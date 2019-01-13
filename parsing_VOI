@@ -1,5 +1,6 @@
 author @t_sanf
 
+
 import os
 import pandas as pd
 from collections import Counter
@@ -46,8 +47,8 @@ class ParseVOI(object):
 
     def BBox_from_position(self,path):
         '''
-        take output from get ROI_slice_loc and return category and bbox for each slice
-        :return: dict {slice:(category,xmin,ymin,xmax,ymax)}
+        take locations obtained 
+        :return: dict {slice:(filename,xmin,ymin,xmax,ymax)}
         '''
 
         pd_df=pd.read_fwf(path)
@@ -56,7 +57,7 @@ class ParseVOI(object):
         dict=self.get_ROI_slice_loc(path=path)
         for slice in dict.keys():
             values=dict[slice]
-            category=values[0]
+            category=values[0] # category is the name of the file
             select_val=list(range(values[1],values[2]))
             specific_part=pd_df.iloc[select_val,:]
             split_df = specific_part.join(specific_part['MIPAV VOI FILE'].str.split(' ', 1, expand=True).rename(columns={0: "X", 1: "Y"})).drop(['MIPAV VOI FILE'], axis=1)
@@ -73,9 +74,8 @@ class ParseVOI(object):
 
     def get_ROI_slice_loc(self,path=None):
         '''
-        selects each slice number and the location of starting coord and end coord,
-        note - simple string matching based on '# slice number'
-        :return: dict of {slice number:(tuple of start location, end location)}
+        performs simple string matching using '# slice number' to find the line location of start and end of each slice.
+        :return: dict of {slice number:(filename, start_line_number, end_line_number)}
 
         '''
         pd_df=pd.read_fwf(path)
