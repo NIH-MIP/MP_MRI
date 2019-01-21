@@ -12,7 +12,7 @@ import dicom2nifti
 class VOI_to_nifti_mask(ParseVOI):
 
     def __init__(self):
-        self.anonymize_database = r'S:\MIP\MRIClinical\anonymous_database'
+        self.anonymize_database = r''
 
     def create_masks_all_patients(self):
         '''
