@@ -15,11 +15,11 @@ from utils import *
 class Anonymize:
 
     def __init__(self):
-        self.phi_database=r'S:\MIP\MRIClinical'
-        self.anonymize_database=r'S:\MIP\MRIClinical\anonymous_database'
-        self.transfer_database=r'T:\Automated_PIRADS_database\anonymized_rad_reports'
-        self.anonymize_database_key=r'S:\MIP\MRIClinical\anonymous_database\key_for_anonymized_database\if_you_enter_you_may_ruin_everything\seriously_if_you_mess_up_this_file_will_cry_loudly'
-        self.database=['surgery_cases']
+        self.phi_database=r''
+        self.anonymize_database=r''
+        self.transfer_database=r''
+        self.anonymize_database_key=r''
+        self.database=
 
     def anonymize_ID_transfer(self):
         '''
