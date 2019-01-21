@@ -9,3 +9,10 @@ a few helper function
 # segment.py
 file to segment bounding boxes around the tumor based on polygon segmentation .voi files for T2, ADC, and highB.  Expects flies to be aligned already.  saves as three chanel RGB in .jpg format.  
 
+# anonymize_database.py
+multiple function for anonymization of data
+
+# nifti_mask
+creating nifi files and masks from dicom data and .voi files
+
+
